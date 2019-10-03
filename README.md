@@ -27,14 +27,19 @@ sudo docker-compose up --build -d
 cd ../jmeter
 ```
 
-6) permita a execução do arquivo:
+6) extraía os arquivos de execução do JMeter:
+```sh
+unzip apache-jmeter-4.0.zip
+```
+
+7) permita a execução do arquivo:
 ```sh
 sudo chmod +x run_test_jmeter.sh
 ```
 
-7) execute o arquivo para iniciar o teste:
+8) execute o arquivo para iniciar o teste:
 ```sh
 sudo ./run_test_jmeter.sh PASTA_FINAL
 ```
 
-8) após a finalização do teste, verifica-se a criação dos relatórios na PASTA_FINAL
+9) após a finalização do teste, verifica-se a criação dos relatórios na PASTA_FINAL
