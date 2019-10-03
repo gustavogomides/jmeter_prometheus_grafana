@@ -1,16 +1,9 @@
-
 import json
 import logging
 import os
 
 from flask import Flask
-from flask_bcrypt import Bcrypt
-from flask_compress import Compress
-from flask_cors import CORS
 from api.config import config_by_name
-
-
-flask_bcrypt = Bcrypt()
 
 
 def create_app(config_name):
@@ -18,17 +11,10 @@ def create_app(config_name):
 
     with app.app_context():
         app.config.from_object(config_by_name[config_name])
-        app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
         app.wsgi_app = PrefixMiddleware(
-            app.wsgi_app, prefix='/quadratic_equation')
-
-        flask_bcrypt.init_app(app)
-
-        compress = Compress()
-        compress.init_app(app)
-
-        CORS(app)
+            app.wsgi_app, prefix='/matmul'
+        )
 
         return app
 

@@ -107,3 +107,6 @@ ENV/
 
 #sonar
 .scannerwork
+
+jmeter/apache-jmeter-4.0
+test_*

@@ -12,7 +12,7 @@ app.register_blueprint(blueprint)
 
 manager = Manager(app)
 
-CORS(app, resources=r'/*', origins='*')
+CORS(app, resorces={r'/d/*': {"origins": '*'}})
 
 
 @manager.command

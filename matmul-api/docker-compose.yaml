@@ -1,14 +1,12 @@
 version: '3'
 
 services:
-  api:
+  matmul-api:
     build: ./
-    container_name: api
-    environment:
-      - PYTHON_ENV=prod
+    container_name: matmul-api
     volumes:
       - "./:/usr/src/app"
     working_dir: "/usr/src/app"
     ports:
-      - "8003:8000"
-  
+      - "8007:8000"
+    restart: always
